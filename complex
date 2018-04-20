@@ -1,8 +1,19 @@
+#include <iostream> 
+
 class Complex {
 
+private:
+    double a, b;
 public:
-
+        complex() { a = 0; b = 0; }
+        complex& operator = (complex);
+        complex operator + (complex);
+        complex operator - (complex);
+        complex operator * (complex&);
+        complex operator / (complex&);
         typedef double type;
+        type a; 
+        type b;
 
         Complex();
 
