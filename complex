@@ -1,0 +1,49 @@
+class Complex {
+
+public:
+
+        typedef double type;
+
+        Complex();
+
+        Complex( type a);
+
+        Complex(type a, type b);
+
+        Complex(const Complex& c);
+
+        auto swap(Complex& c) -> void;
+
+        auto operator=(const Complex& c) -> Complex&;
+
+        auto operator+(const Complex& c) -> Complex;
+
+        auto operator-(const Complex& c) -> Complex;
+
+        auto operator*(const Complex& c) -> Complex;
+
+        auto operator/(const Complex& c) -> Complex;
+
+        auto operator!(const Complex& c) -> Complex;
+
+        auto operator==(const Complex& c) -> bool;
+
+        auto operator!=(const Complex& c) -> bool;
+
+        explicit operator type();
+
+        auto operator[](size_t index) -> type;
+        
+        friend
+        auto operator>>(istream&, Complex& c) -> istream&;
+
+        friend
+        auto operator<<(ostream&, const Complex& c) -> ostream&;
+
+        static Complex from_string(const std::string& string);
+
+        ~Complex();
+
+        private:
+          std::pair<type, type>* pair;
+        };
